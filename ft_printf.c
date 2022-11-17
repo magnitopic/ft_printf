@@ -6,7 +6,7 @@
 /*   By: alaparic <alaparic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:20:26 by alaparic          #+#    #+#             */
-/*   Updated: 2022/11/17 13:17:35 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/11/17 17:13:13 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,17 @@
 int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
+	char	*str;
 
 	va_start(ap, format);
-	printf("%s", format);
-	printf("%s", va_arg(ap, char *));
-	printf("%s", va_arg(ap, char *));
+	while (*format++)
+	{
+		ft_putnbr(*format);
+	}
+	//printf("%s", va_arg(ap, char *));
+	//printf("%s", va_arg(ap, char *));
 	va_end(ap);
+	return (0);
 }
 
 int	main(void)

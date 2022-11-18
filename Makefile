@@ -1,7 +1,6 @@
-SRCS		= 	ft_printf.c
+SRCS		= 	ft_printf.c \
+				ft_printalpha.c
 OBJS		= $(SRCS:.c=.o)
-
-LIBFT		= ./libft/libft.a
 
 NAME		= libftprintf.a
 

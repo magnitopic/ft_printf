@@ -6,7 +6,7 @@
 /*   By: alaparic <alaparic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:21:18 by alaparic          #+#    #+#             */
-/*   Updated: 2022/11/17 12:18:34 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/11/18 08:24:09 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@
 # include<stdarg.h>
 
 int	ft_printf(const char *test, ...);
-
+int	ft_putchar(char c);
 #endif

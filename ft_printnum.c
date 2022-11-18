@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printnum.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alaparic <alaparic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 18:21:18 by alaparic          #+#    #+#             */
-/*   Updated: 2022/11/18 12:38:43 by alaparic         ###   ########.fr       */
+/*   Created: 2022/11/18 12:45:33 by alaparic          #+#    #+#             */
+/*   Updated: 2022/11/18 12:52:59 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include<stdarg.h>
+int	ft_putnbr(int n)
+{
+	int	len;
 
-int	ft_printf(const char *test, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *c);
-int	ft_putnbr(int n);
-#endif
+	len = 0;
+	if (n == -2147483648)
+	{
+		len += ft_putchar('-');
+		len += ft_putchar('2');
+		n = 147483648;
+	}
+	if (n < 0)
+	{
+		len += ft_putchar('-');
+		n *= -1;
+	}
+	while (n >= 10)
+	{
+		len += ft_putchar(n + '0');
+		n /= 10;
+	}
+	len += ft_putchar(n + '0');
+	return (len);
+}

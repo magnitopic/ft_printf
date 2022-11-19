@@ -6,21 +6,20 @@ OBJS		= $(SRCS:.c=.o)
 NAME		= libftprintf.a
 
 CC			= gcc
-
+RM			= rm -f
 CFLAGS		= -Wall -Werror -Wextra
 
-RM			= rm -rf
-
+all:		$(NAME)
 
 $(NAME):	$(OBJS)
 				ar rcs $(NAME) $(OBJS)
-
-all:		$(NAME)
 
 clean:
 				$(RM) $(OBJS)
 
 fclean:		clean
-			$(name)
+				$(RM) $(NAME)
+
+re:			fclean $(NAME)
 
 .PHONY:		all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: alaparic <alaparic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:20:26 by alaparic          #+#    #+#             */
-/*   Updated: 2022/11/19 15:35:28 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/11/19 15:55:32 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ int	ft_categorize(const char c, va_list ap)
 	//	len = ft_;
 	else if (c == 'i' || c == 'd')
 		len = ft_putnbr(va_arg(ap, int));
-	/*else if (c == 'i')
-		len = ft_;
 	else if (c == 'u')
-		len = ft_;*/
+		len = ft_putunsig(va_arg(ap, unsigned int));
 	else if (c == 'x')
 		len = ft_puthex(va_arg(ap, int), 1);
 	else if (c == 'X')
@@ -60,10 +58,11 @@ int	ft_printf(const char *format, ...)
 	return (len);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char	test[28] = "hello";
 
 	ft_printf("var : %c %s %X \n", 'c', test, 69420);
 	return (0);
 }
+ */

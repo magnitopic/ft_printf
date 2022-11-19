@@ -6,7 +6,7 @@
 /*   By: alaparic <alaparic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 12:45:33 by alaparic          #+#    #+#             */
-/*   Updated: 2022/11/19 15:34:50 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/11/19 15:56:22 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,20 @@ int	ft_puthex(unsigned int n, int flag)
 	}
 	else
 		len += ft_putchar(chars[n]);
+	return (len);
+}
+
+int	ft_putunsig(unsigned int n)
+{
+	int	len;
+
+	len = 0;
+	if (n >= 10)
+	{
+		len += ft_putunsig(n / 10);
+		len += ft_putunsig(n % 10);
+	}
+	else
+		len += ft_putchar(n + '0');
 	return (len);
 }

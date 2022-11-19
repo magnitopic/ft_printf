@@ -6,7 +6,7 @@
 /*   By: alaparic <alaparic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 08:21:44 by alaparic          #+#    #+#             */
-/*   Updated: 2022/11/18 17:33:57 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/11/19 11:52:14 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,12 @@ int	ft_putchar(char c)
 	return (1);
 }
 
-int	ft_putstr(va_list ap)
+int	ft_putstr(char *c)
 {
-	int	len;
-	char *c;
+	int		len;
 
-	c = va_arg(ap, char *);
 	len = 0;
-	while (*c)
-	{
-		write(1, &*c++, 1);
-		len++;
-	}
+	while (c[len])
+		len += ft_putchar(c[len]);
 	return (len);
 }

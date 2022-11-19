@@ -6,7 +6,7 @@
 /*   By: alaparic <alaparic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:20:26 by alaparic          #+#    #+#             */
-/*   Updated: 2022/11/19 17:07:51 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/11/19 17:22:05 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,3 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (len);
 }
-
-/* int	main(void)
-{
-	char	test[28] = "hello";
-	int *testing=calloc(5,sizeof(int));
-
-	ft_printf("var : %c %X  %p \n", 'c', &test, 69420, testing);
-	
-	free(testing);
-	return (0);
-} */

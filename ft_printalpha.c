@@ -6,7 +6,7 @@
 /*   By: alaparic <alaparic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 08:21:44 by alaparic          #+#    #+#             */
-/*   Updated: 2022/11/19 11:52:14 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/11/19 17:20:18 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	ft_putstr(char *c)
 {
 	int		len;
 
+	if (!c)
+		return (ft_putstr("(null)"));
 	len = 0;
 	while (c[len])
 		len += ft_putchar(c[len]);

@@ -6,25 +6,26 @@
 /*   By: alaparic <alaparic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:20:26 by alaparic          #+#    #+#             */
-/*   Updated: 2022/11/18 12:42:04 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/11/18 18:12:07 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_categorize(char c, char *param)
+int	ft_categorize(const char c, va_list ap)
 {
 	int	len;
 
+	len = 0;
 	if (c == 'c')
-		len = ft_putchar(*param);
+		len = ft_putchar(va_arg(ap, int));
 	else if (c == 's')
-		len = ft_putstr(param);
-	/*else if (c == 'p')
-		len = ft_;
+		len = ft_putstr(ap);
+	//else if (c == 'p')
+	//	len = ft_;
 	else if (c == 'i' || c == 'd')
 		len = ft_putnbr(param);
-	else if (c == 'i')
+	/*else if (c == 'i')
 		len = ft_;
 	else if (c == 'u')
 		len = ft_;
@@ -33,7 +34,10 @@ int	ft_categorize(char c, char *param)
 	else if (c == 'X')
 		len = ft_;*/
 	else if (c == '%')
-		len = ft_putchar('%');
+	{
+		write(1, "%", 1);
+		len++;
+	}
 	return (len);
 }
 
@@ -43,15 +47,19 @@ int	ft_printf(const char *format, ...)
 	int		len;
 
 	va_start(ap, format);
+	len = 0;
 	while (*format)
 	{
 		if (*format == '%')
 		{
-			len += ft_categorize(format[1], va_arg(ap, char *));
 			format++;
+			len += ft_categorize(*format, ap);
 		}
 		else
-			len += ft_putchar(*format);
+		{
+			write(1, format, 1);
+			len++;
+		}
 		format++;
 	}
 	va_end(ap);
@@ -60,8 +68,9 @@ int	ft_printf(const char *format, ...)
 
 int	main(void)
 {
-	char	test[28] = "hello there, general kenobi";
+	char	test[28] = "hello";
 
-	ft_printf("var : %c", 'c', "There");
+	ft_printf("var : %s %c", test, "String for you");
+	printf("%s %s", "asdfsfsdfsaf");
 	return (0);
 }

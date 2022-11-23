@@ -6,7 +6,7 @@
 /*   By: alaparic <alaparic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:20:26 by alaparic          #+#    #+#             */
-/*   Updated: 2022/11/19 17:22:05 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/11/23 18:15:42 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,23 @@
 
 int	ft_categorize(const char c, va_list ap)
 {
-	int	len;
-
-	len = 0;
 	if (c == 'c')
-		len = ft_putchar(va_arg(ap, int));
+		return (ft_putchar(va_arg(ap, int)));
 	else if (c == 's')
-		len = ft_putstr(va_arg(ap, char *));
+		return (ft_putstr(va_arg(ap, char *)));
 	else if (c == 'p')
-		len = ft_putpoint(va_arg(ap, unsigned long));
+		return (ft_putpoint(va_arg(ap, unsigned long)));
 	else if (c == 'i' || c == 'd')
-		len = ft_putnbr(va_arg(ap, int));
+		return (ft_putnbr(va_arg(ap, int)));
 	else if (c == 'u')
-		len = ft_putunsig(va_arg(ap, unsigned int));
+		return (ft_putunsig(va_arg(ap, unsigned int)));
 	else if (c == 'x')
-		len = ft_puthex(va_arg(ap, int), 1);
+		return (ft_puthex(va_arg(ap, int), 1));
 	else if (c == 'X')
-		len = ft_puthex(va_arg(ap, int), 0);
+		return (ft_puthex(va_arg(ap, int), 0));
 	else if (c == '%')
-		len = ft_putchar('%');
-	return (len);
+		return (ft_putchar('%'));
+	return (0);
 }
 
 int	ft_printf(const char *format, ...)

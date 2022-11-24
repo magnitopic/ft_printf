@@ -6,7 +6,7 @@
 /*   By: alaparic <alaparic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:21:18 by alaparic          #+#    #+#             */
-/*   Updated: 2022/11/19 16:57:09 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/11/24 14:55:05 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include<stdarg.h>
+# include <stdarg.h>
 
 int	ft_printf(const char *format, ...);
 int	ft_putchar(char c);
